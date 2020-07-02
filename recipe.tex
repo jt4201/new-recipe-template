@@ -8,7 +8,9 @@
 \newcommand{\mykeywords}{Recipe,\mycourse,\mycuisine}
 \newcommand{\myurl}{}
 \newcommand{\mymakes}{}
-\newcommand{\mytakes}{}
+\newcommand{\myprep}{}
+\newcommand{\mycook}{}
+\newcommand{\mytotal}{}
 
 \newcommand{\mycals}{}
 \newcommand{\myfat}{}
@@ -35,7 +37,9 @@
         \myheaderitem{Course}{\mycourse}
         \myheaderitem{Cuisine}{\mycuisine}
         \myheaderitem{Makes}{\mymakes}
-        \myheaderitem{Takes}{\mytakes}
+        \myheaderitem{Takes}{\myprep}
+        \myheaderitem{Takes}{\mycook}
+        \myheaderitem{Takes}{\mytotal}
         \myheaderitem{Calories}{\mycals}
         \myheaderitem{Carbohydates}{\mycho}
         \myheaderitem{Fat}{\myfat}
@@ -46,7 +50,7 @@
         \medskip\myheaderitem{Author}{\myauthor}
 
         \myheaderitem{SRC}{\href{\myurl}{\mytitle}}
-        \medskip
+        \smallskip
       }
     \end{minipage}
   } &
@@ -57,13 +61,14 @@
   \begin{minipage}[t][][b]{0.34\textwidth}
     \subsection*{Ingredients}
     \import{./}{ingredients}
+    \smallskip
   \end{minipage}
     &
   \multicolumn{2}{l|}{%
     \begin{minipage}[t][][b]{0.54\textwidth}
       \subsection*{Method}
       \import{./}{method}
-      \medskip
+      \smallskip
     \end{minipage}
   }   \\ \hline
 \end{tabular}
