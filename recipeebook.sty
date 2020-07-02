@@ -1,0 +1,62 @@
+\ProvidesPackage{recipeebook}
+\usepackage[english]{babel}
+\usepackage[final]{microtype}
+
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{AlegreyaSans}
+\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{import}
+
+\pagestyle{empty}
+
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\footskip}{0pt}
+\setlrmarginsandblock{1cm}{*}{*}
+\setulmarginsandblock{1cm}{*}{*}
+\checkandfixthelayout
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\usepackage{ifthen}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\newcommand{\myheaderitem}[2]{%
+  \ifthenelse{\equal{#2}{}}%
+  {} % empty value
+  {\mbox{\textcolor{gray}{{#1}}\enskip{#2}\quad}}%
+}
+
+
+\newlist{myingredients}{itemize}{3}
+\setlist[myingredients]{%
+  before=\small\raggedright%
+  ,parsep=0pt%
+  ,itemsep=.5ex%
+  ,label=\textbullet%
+  ,leftmargin=*%
+}
+
+\newlist{mymethod}{enumerate}{3}
+\setlist[mymethod]{%
+  before=\small\raggedright%
+  ,parsep=0pt%
+  ,itemsep=.5ex%
+  ,label=\arabic*.%
+  ,leftmargin=*%
+}
+
+\titlespacing{\subsection}{0pt}{*1}{*0.25}
+\titlespacing{\subsubsection}{0pt}{*0.25}{*0.25}

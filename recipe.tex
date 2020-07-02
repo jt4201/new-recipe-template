@@ -1,0 +1,71 @@
+\documentclass[11pt,oneside,ebook]{memoir}
+\usepackage{recipeebook}
+
+\newcommand{\mytitle}{}
+\newcommand{\myauthor}{}
+\newcommand{\mycuisine}{}
+\newcommand{\mycourse}{}
+\newcommand{\mykeywords}{Recipe,\mycourse,\mycuisine}
+\newcommand{\myurl}{}
+\newcommand{\mymakes}{}
+\newcommand{\mytakes}{}
+
+\newcommand{\mycals}{}
+\newcommand{\myfat}{}
+\newcommand{\myprotein}{}
+\newcommand{\mycho}{}
+\newcommand{\mysodium}{}
+\newcommand{\mychol}{}
+
+\begin{document}
+
+\hypersetup{
+  pdftitle={\mytitle},
+  pdfauthor={\myauthor},
+  pdfsubject={Recipe},
+  pdfkeywords={\mykeywords}
+}
+
+\begin{tabular}{|lll|}
+  \hline
+  \multicolumn{2}{|l}{%
+    \begin{minipage}[t][][b]{0.54\textwidth}
+      \section*{\mytitle}
+      \raggedright{\small
+        \myheaderitem{Course}{\mycourse}
+        \myheaderitem{Cuisine}{\mycuisine}
+        \myheaderitem{Makes}{\mymakes}
+        \myheaderitem{Takes}{\mytakes}
+        \myheaderitem{Calories}{\mycals}
+        \myheaderitem{Carbohydates}{\mycho}
+        \myheaderitem{Fat}{\myfat}
+        \myheaderitem{Protein}{\myprotein}
+        \myheaderitem{Sodium}{\mysodium}
+        \myheaderitem{Cholesterol}{\mychol}
+
+        \medskip\myheaderitem{Author}{\myauthor}
+
+        \myheaderitem{SRC}{\href{\myurl}{\mytitle}}
+        \medskip
+      }
+    \end{minipage}
+  } &
+  \begin{minipage}[t][][b]{0.34\textwidth}
+    \includegraphics[width=\textwidth]{image.jpg}
+  \end{minipage}
+  \\ \hline
+  \begin{minipage}[t][][b]{0.34\textwidth}
+    \subsection*{Ingredients}
+    \import{./}{ingredients}
+  \end{minipage}
+    &
+  \multicolumn{2}{l|}{%
+    \begin{minipage}[t][][b]{0.54\textwidth}
+      \subsection*{Method}
+      \import{./}{method}
+      \medskip
+    \end{minipage}
+  }   \\ \hline
+\end{tabular}
+
+\end{document}
