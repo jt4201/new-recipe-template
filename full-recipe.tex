@@ -1,0 +1,97 @@
+%!TeX jobName =
+%!Tex engine = xelatex
+%!TeX outputDirectory = PDF
+%!TeX copyTargetsToRoot = false
+%!TeX saveCache = false
+%!TeX synctex = false
+%!Tex loadCache = false
+\documentclass[11pt,oneside,ebook]{memoir}
+\usepackage{recipeebook}
+
+\newcommand{\mytitle}{}
+\newcommand{\myauthor}{}
+\newcommand{\mycuisine}{}
+\newcommand{\mycourse}{}
+\newcommand{\mykeywords}{Recipe,\mycourse,\mycuisine}
+\newcommand{\myurl}{}
+\newcommand{\mymakes}{}
+\newcommand{\myprep}{}
+\newcommand{\mycook}{}
+\newcommand{\mytotal}{}
+
+\newcommand{\mycals}{}
+\newcommand{\myfat}{}
+\newcommand{\myprotein}{}
+\newcommand{\mycho}{}
+\newcommand{\mysodium}{}
+\newcommand{\mychol}{}
+
+\newcommand{\myimage}{image.jpg}
+
+\begin{document}
+
+\hypersetup{
+  pdftitle={\mytitle},
+  pdfauthor={\myauthor},
+  pdfsubject={Recipe},
+  pdfkeywords={\mykeywords}
+}
+
+\raggedright\begin{tabular}{|lll|}
+  \hline
+  \multicolumn{2}{|l}{%
+    \begin{minipage}[t][][b]{0.54\textwidth}
+      \section*{\mytitle}
+      \raggedright{\small
+        \myheaderitem{Course}{\mycourse}
+        \myheaderitem{Cuisine}{\mycuisine}
+        \myheaderitem{Makes}{\mymakes}
+        \myheaderitem{Prep}{\myprep}
+        \myheaderitem{Cook}{\mycook}
+        \myheaderitem{Total}{\mytotal}
+        \myheaderitem{Calories}{\mycals}
+        \myheaderitem{Carbohydates}{\mycho}
+        \myheaderitem{Fat}{\myfat}
+        \myheaderitem{Protein}{\myprotein}
+        \myheaderitem{Sodium}{\mysodium}
+        \myheaderitem{Cholesterol}{\mychol}
+
+        \medskip\myheaderitem{Author}{\myauthor}
+
+        \myheaderitem{URL}{\href{\myurl}{\mytitle}}
+        \smallskip
+      }
+    \end{minipage}
+  } &
+  \begin{minipage}[t][][b]{0.34\textwidth}
+    \includegraphics[width=\textwidth]{\myimage}
+    \vspace{1mm}
+  \end{minipage}
+  \\ \hline
+  \begin{minipage}[t][][b]{0.34\textwidth}
+    \subsection*{Ingredients}
+    \begin{myingredients}
+      % FIXME
+    \end{myingredients}
+    \smallskip
+  \end{minipage}
+    &
+  \multicolumn{2}{l|}{%
+    \begin{minipage}[t][][b]{0.54\textwidth}
+      \subsection*{Method}
+      \begin{mymethod}
+        % FIXME
+      \end{mymethod}
+      \smallskip
+    \end{minipage}
+  }   \\
+  \multicolumn{3}{|l|}{%
+    \begin{minipage}[t][][b]{0.95\textwidth}
+      % FIXME
+      \smallskip
+    \end{minipage}
+  }
+  \\ \hline
+\end{tabular}
+
+\end{document}
